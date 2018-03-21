@@ -15,5 +15,7 @@ RUN npm install --only=production
 # Bundle app source
 COPY . .
 
+RUN npm install -g http-server
+
 EXPOSE 80
-CMD [ "npm", "start" ]
+CMD [ "http-server", "/usr/src/app", "-p", "80" ]
